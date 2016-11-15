@@ -1,7 +1,7 @@
 #!/bin/sh
 
 host=$1
-username="wangkang-xy"
+username=""
 
 # Clean Env
 echo "Clean Remote Env..."
