@@ -1,0 +1,13 @@
+#!/usr/bin/expect
+set timeout 5
+set PASSWD ""
+#set PASSWD [exec sh -c "echo $PASSWD | /usr/local/bin/base64 -d"]
+
+eval spawn $argv
+
+expect {
+    "(yes/no)?" { send "yes\r";exp_continue}
+    "Password:" { send "$PASSWD\r";exp_continue }
+    "password:" { send "$PASSWD\r";exp_continue }
+    "wangkang-xy:" { send "$PASSWD\r";exp_continue }
+}
