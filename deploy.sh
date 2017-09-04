@@ -18,3 +18,6 @@ ssh -A $username@$host "cd ~ && tar -xzvf Env.tar.gz && rm Env.tar.gz"
 # Soft link
 echo "Make Soft Link"
 ssh -A $username@$host "cd ~/Env && sh install.sh"
+
+# Install Vundle
+git clone https://github.com/gmarik/vundle.git ~/.vim/bundle/Vundle.vim
