@@ -1,4 +1,4 @@
-# Env
+# Fork Wiki
 This tool helps you copy all wiki content after fork some repo
 
 ## Usage
