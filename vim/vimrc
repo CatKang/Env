@@ -79,6 +79,7 @@ let Tlist_Auto_Open=1
 let Tlist_Auto_Update=1
 let Tlist_Sort_Type="name"
 let Tlist_Process_File_Always=1         "taglist始终解析文件中的tag，不管taglist是否打开
+map <c-]> g<c-]>
 "let Tlist_Enable_Fold_Column=1
 nnoremap <silent> <F2> :TlistToggle<CR>
 
