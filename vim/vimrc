@@ -112,5 +112,46 @@ Plugin 'ervandew/supertab'
 
 call vundle#end()            " required
 
+au BufNewFile,BufRead *.ic set filetype=c
+
+" =================== cscope setting =====================
+" cscope高亮
+hi Modemsg ctermfg=magenta
+
+" 设置 leader 键，例子为空号键，也可以设置为其他的
+let mapleader=","
+
+if has("cscope")
+    set csprg=/usr/local/bin/cscope
+    set csto=0
+    set cst
+    set nocsverb
+    " add any database in current directory
+    if filereadable("cscope.out")
+        cs add cscope.out
+    " else add database pointed to by environment
+    elseif $CSCOPE_DB != ""
+        cs add $CSCOPE_DB
+    endif
+    set csverb
+endif
+" s: 查找C语言符号，即查找函数名、宏、枚举值等出现的地方
+nmap <Leader>s :cs find s <C-R>=expand("<cword>")<CR><CR>
+" g: 查找函数、宏、枚举等定义的位置
+nmap <Leader>g :cs find g <C-R>=expand("<cword>")<CR><CR>
+" d: 查找本函数调用的函数
+nmap <Leader>d :cs find d <C-R>=expand("<cword>")<CR><CR>
+" c: 查找调用本函数的函数
+nmap <Leader>c :cs find c <C-R>=expand("<cword>")<CR><CR>
+" t: 查找指定的字符串
+nmap <Leader>t :cs find t <C-R>=expand("<cword>")<CR><CR>
+" e: 查找egrep模式，相当于egrep功能，但查找速度快多了
+nmap <Leader>e :cs find e <C-R>=expand("<cword>")<CR><CR>
+" f: 查找并打开文件，类似vim的find功能
+nmap <Leader>f :cs find f <C-R>=expand("<cfile>")<CR><CR>
+" i: 查找包含本文件的文件
+nmap <Leader>i :cs find i <C-R>=expand("<cfile>")<CR><CR>
+
+" =================== cscope setting end =================
 
 
