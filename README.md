@@ -1,8 +1,8 @@
 # My Env and Tools
 
 ## Env
-Setup the environment by run the install.sh script
-
+- Setup the environment by run the install.sh script
+- Then open vim and execute ':BundleInstall' to download and install all plugin
 
 ## Tools
 - tools/remote_execute: batch execute remote command or send file
